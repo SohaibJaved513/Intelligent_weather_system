@@ -1,0 +1,160 @@
+{
+  "dataset": {
+    "original_rows": 96453,
+    "invalid_timestamps": 0,
+    "duplicate_timestamps": 24,
+    "missing_hours_added": 3,
+    "target_missing_before": 3,
+    "target_missing_after": 0,
+    "start_time": "2005-12-31 23:00:00+00:00",
+    "end_time": "2016-12-31 22:00:00+00:00",
+    "missing_timestamps": [
+      "2014-07-13 22:00:00+00:00",
+      "2014-07-13 23:00:00+00:00",
+      "2014-07-14 00:00:00+00:00"
+    ],
+    "rows_after_feature_engineering": 96264
+  },
+  "split": {
+    "training_rows": 77011,
+    "validation_rows": 19253,
+    "training_start": "2006-01-07 23:00:00+00:00",
+    "training_end": "2014-10-21 17:00:00+00:00",
+    "validation_start": "2014-10-21 18:00:00+00:00",
+    "validation_end": "2016-12-31 22:00:00+00:00"
+  },
+  "model": {
+    "name": "XGBRegressor",
+    "best_parameters": {
+      "n_estimators": 100,
+      "max_depth": 5,
+      "learning_rate": 0.08,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8
+    },
+    "best_mean_cv_RMSE": 1.079797604482122
+  },
+  "next_hour_forecast": {
+    "forecast_timestamp": "2016-12-31 23:00:00+00:00",
+    "predicted_temperature_C": -0.7933834195137024,
+    "forecast_type": "one-step-ahead hourly forecast"
+  },
+  "validation_metrics": {
+    "RMSE": 0.8514631344558039,
+    "MAE": 0.6371596964845335,
+    "MAPE_percent": 31.92522937399297,
+    "sMAPE_percent": 14.396850443691694,
+    "R2": 0.9912165170558829
+  },
+  "baseline_metrics": {
+    "RMSE": 1.21004362464424,
+    "MAE": 0.8412296496361318,
+    "MAPE_percent": 31.71943726375731,
+    "sMAPE_percent": 15.650279849363155,
+    "R2": 0.9822606738086215
+  },
+  "top_gain_features": [
+    {
+      "feature": "temp_lag_1h",
+      "gain": 36446.83203125,
+      "normalized_gain": 0.4049764682054292
+    },
+    {
+      "feature": "temp_ewm_24h",
+      "gain": 25641.556640625,
+      "normalized_gain": 0.28491439362154186
+    },
+    {
+      "feature": "temp_lag_24h",
+      "gain": 20855.279296875,
+      "normalized_gain": 0.23173200199799585
+    },
+    {
+      "feature": "hour_cos",
+      "gain": 2203.775634765625,
+      "normalized_gain": 0.02448710144462868
+    },
+    {
+      "feature": "temp_rolling_mean_24h",
+      "gain": 1775.526123046875,
+      "normalized_gain": 0.019728636439553426
+    },
+    {
+      "feature": "humidity_lag_1h",
+      "gain": 728.6283569335938,
+      "normalized_gain": 0.008096103891067635
+    },
+    {
+      "feature": "temp_lag_7d",
+      "gain": 593.7509155273438,
+      "normalized_gain": 0.0065974224744096924
+    },
+    {
+      "feature": "hour_sin",
+      "gain": 445.4124450683594,
+      "normalized_gain": 0.0049491697589482495
+    },
+    {
+      "feature": "day_of_year_cos",
+      "gain": 263.8797302246094,
+      "normalized_gain": 0.0029320814792829237
+    },
+    {
+      "feature": "temp_rolling_std_24h",
+      "gain": 176.34634399414062,
+      "normalized_gain": 0.001959460276559939
+    }
+  ],
+  "top_shap_features": [
+    {
+      "feature": "temp_lag_1h",
+      "mean_absolute_shap": 5.457608699798584,
+      "mean_shap": -0.3498334586620331
+    },
+    {
+      "feature": "temp_lag_24h",
+      "mean_absolute_shap": 1.2123639583587646,
+      "mean_shap": -0.2453671097755432
+    },
+    {
+      "feature": "temp_ewm_24h",
+      "mean_absolute_shap": 0.7836347222328186,
+      "mean_shap": 0.2048974633216858
+    },
+    {
+      "feature": "hour_cos",
+      "mean_absolute_shap": 0.5496427416801453,
+      "mean_shap": 0.008319889195263386
+    },
+    {
+      "feature": "hour_sin",
+      "mean_absolute_shap": 0.40029481053352356,
+      "mean_shap": 0.011186163872480392
+    },
+    {
+      "feature": "temp_rolling_mean_24h",
+      "mean_absolute_shap": 0.1242048516869545,
+      "mean_shap": 0.00702859228476882
+    },
+    {
+      "feature": "humidity_lag_1h",
+      "mean_absolute_shap": 0.09069167077541351,
+      "mean_shap": -0.07574600726366043
+    },
+    {
+      "feature": "day_of_year_cos",
+      "mean_absolute_shap": 0.08171000331640244,
+      "mean_shap": -0.014261674135923386
+    },
+    {
+      "feature": "temp_rolling_std_24h",
+      "mean_absolute_shap": 0.06462554633617401,
+      "mean_shap": -0.006265315227210522
+    },
+    {
+      "feature": "temp_lag_7d",
+      "mean_absolute_shap": 0.05364558845758438,
+      "mean_shap": -0.010900778695940971
+    }
+  ]
+}
