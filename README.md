@@ -85,7 +85,3 @@ python run_pipeline.py --data-path path/to/weatherHistory.csv
 Weather observations are sequential. Random splitting mixes future periods into
 training and can make the validation score unrealistically strong. This pipeline
 uses older observations for training and the newest 20% for validation.
-
-## Code explanation
-
-All code comments and explanatory docstrings have been removed from the Python files. The complete module-by-module explanation is available in [`CODE_EXPLANATION.md`](CODE_EXPLANATION.md).
